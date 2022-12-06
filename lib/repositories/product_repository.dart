@@ -8,4 +8,5 @@ class ProductRepository {
   ProductRepository(this._service);
 
   Future<List<Product>> getProducts(ProductCategory category) => _service.getProducts(category);
+  Stream<int> getWatchers(int productId) => _service.getWatchers(productId);
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:getshop_demo/bindings/product_details_binding.dart';
 import 'package:getshop_demo/ui/product/components/star_rating.dart';
+import 'package:getshop_demo/ui/product/screens/product_details_screen.dart';
+import 'package:getshop_demo/util/nav.dart';
 
 import '../../../data/product/product.dart';
 
@@ -39,7 +42,7 @@ class ProductListItem extends StatelessWidget {
     final imageSize = MediaQuery.of(context).size.width * 0.25;
     return Material(
       child: InkWell(
-        onTap: () {},
+        onTap: _onItemTap,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
@@ -56,6 +59,13 @@ class ProductListItem extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _onItemTap() {
+    Nav.to(
+      ProductDetailsScreen(product: product),
+      binding: ProductDetailsBinding(productId: product.id),
     );
   }
 }

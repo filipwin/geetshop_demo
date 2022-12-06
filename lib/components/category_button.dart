@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:getshop_demo/bindings/product_list_binding.dart';
 import 'package:getshop_demo/data/product/product_category.dart';
 import 'package:getshop_demo/ui/product/screens/product_list_screen.dart';
@@ -39,9 +38,8 @@ class CategoryButton extends StatelessWidget {
   }
 
   void _openProductList() {
-    Get.to(
+    Nav.to(
       const ProductListScreen(),
-      id: Nav.id,
       binding: ProductListBinding(category: category),
     );
   }

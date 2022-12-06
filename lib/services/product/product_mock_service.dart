@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:getshop_demo/data/product/product.dart';
 import 'package:getshop_demo/data/product/product_category.dart';
 import 'package:getshop_demo/services/product/product_service.dart';
@@ -19,6 +21,14 @@ class ProductMockService implements ProductService {
     }
 
     return Future.delayed(_mockResponseDelay, () => productList);
+  }
+
+  @override
+  Stream<int> getWatchers(int productId) {
+    return Stream<int>.periodic(
+      _mockResponseDelay,
+      (i) => Random(DateTime.now().millisecondsSinceEpoch).nextInt(100),
+    );
   }
 }
 
