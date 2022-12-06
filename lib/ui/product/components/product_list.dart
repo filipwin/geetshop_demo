@@ -37,19 +37,24 @@ class ProductListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageSize = MediaQuery.of(context).size.width * 0.25;
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.network(
-            product.imageUrl,
-            width: imageSize,
-            height: imageSize,
+    return Material(
+      child: InkWell(
+        onTap: () {},
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.network(
+                product.imageUrl,
+                width: imageSize,
+                height: imageSize,
+              ),
+              const SizedBox(width: 16),
+              ItemDescription(product: product),
+            ],
           ),
-          const SizedBox(width: 16),
-          ItemDescription(product: product),
-        ],
+        ),
       ),
     );
   }

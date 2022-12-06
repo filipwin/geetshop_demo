@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getshop_demo/bindings/product_list_binding.dart';
 import 'package:getshop_demo/data/product/product_category.dart';
-import 'package:getshop_demo/ui/product/product_list_screen.dart';
+import 'package:getshop_demo/ui/product/screens/product_list_screen.dart';
 import 'package:getshop_demo/util/nav.dart';
 
 class CategoryButton extends StatelessWidget {
