@@ -13,8 +13,8 @@ class ProductListBinding extends Bindings {
 
   @override
   void dependencies() {
-    Get.lazyPut<ProductService>(() => ProductMockService(), tag: "mock");
-    Get.lazyPut(() => ProductRepository(Get.find(tag: "mock")));
-    Get.lazyPut(() => ProductListController(Get.find(), category: category));
+    Get.create<ProductService>(() => ProductMockService(), tag: "mock");
+    Get.create(() => ProductRepository(Get.find(tag: "mock")));
+    Get.create(() => ProductListController(Get.find(), category: category));
   }
 }
