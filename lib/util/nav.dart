@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 abstract class Nav {
@@ -5,9 +6,9 @@ abstract class Nav {
 
   static const id = 123456;
 
-  static Future<T?>? to<T>(dynamic page, {Bindings? binding}) {
+  static Future<T?>? to<T>(Widget page, {Bindings? binding}) {
     return Get.to<T>(
-      page,
+      () => page,
       id: id,
       binding: binding,
     );

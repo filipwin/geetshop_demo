@@ -8,6 +8,7 @@ import '../../util/blah_generator.dart';
 
 class ProductMockService implements ProductService {
   static const _mockResponseDelay = Duration(seconds: 2);
+  static const _maxNumberOfWatchers = 30;
 
   @override
   Future<List<Product>> getProducts(ProductCategory category) {
@@ -27,7 +28,7 @@ class ProductMockService implements ProductService {
   Stream<int> getWatchers(int productId) {
     return Stream<int>.periodic(
       _mockResponseDelay,
-      (i) => Random(DateTime.now().millisecondsSinceEpoch).nextInt(100),
+      (i) => Random(DateTime.now().millisecondsSinceEpoch).nextInt(_maxNumberOfWatchers) + 1,
     );
   }
 }

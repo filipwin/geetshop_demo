@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getshop_demo/ui/product/components/add_to_cart_section.dart';
+import 'package:getshop_demo/ui/product/components/watchers_section.dart';
 
 import '../../../data/product/product.dart';
 
@@ -20,6 +21,8 @@ class ProductDetailsScreen extends StatelessWidget {
               product.imageUrl,
               width: MediaQuery.of(context).size.width * 0.8,
             ),
+            const SizedBox(height: 4),
+            const WatchersSection(),
             const SizedBox(height: 32),
             Text(
               product.name,
