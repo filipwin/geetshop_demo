@@ -4,7 +4,6 @@ import 'package:getshop_demo/controllers/product_list_controller.dart';
 import 'package:getshop_demo/ui/product/components/product_list.dart';
 
 class ProductListScreen extends StatelessWidget {
-
   const ProductListScreen({Key? key}) : super(key: key);
 
   @override
