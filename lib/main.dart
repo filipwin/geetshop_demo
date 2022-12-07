@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getshop_demo/bindings/app_binding.dart';
 import 'package:getshop_demo/ui/home_screen.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightGreen,
       ),
+      initialBinding: AppBinding(),
       home: HomeScreen(),
     );
   }

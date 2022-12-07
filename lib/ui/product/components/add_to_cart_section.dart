@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getshop_demo/controllers/cart_controller.dart';
 
 import '../../../data/product/product.dart';
 
@@ -12,6 +14,7 @@ class AddToCartSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cartController = Get.find<CartController>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -20,13 +23,30 @@ class AddToCartSection extends StatelessWidget {
           style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         const SizedBox(width: 16),
-        MaterialButton(
-          onPressed: () {},
-          color: Theme.of(context).primaryColor,
-          shape: const StadiumBorder(),
-          child: const Text("Add to cart"),
+        Obx(
+          () => cartController.cart.isEmpty
+              ? MaterialButton(
+                  onPressed: _addToCart,
+                  color: Theme.of(context).primaryColor,
+                  shape: const StadiumBorder(),
+                  child: const Text("Add to cart"),
+                )
+              : MaterialButton(
+                  onPressed: _removeFromCart,
+                  color: Theme.of(context).errorColor,
+                  shape: const StadiumBorder(),
+                  child: const Text("Remove from cart"),
+                ),
         ),
       ],
     );
+  }
+
+  void _addToCart() {
+    Get.find<CartController>().addToCart(product);
+  }
+
+  void _removeFromCart() {
+    Get.find<CartController>().removeFromCart(product);
   }
 }
