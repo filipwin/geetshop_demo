@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getshop_demo/components/cart_items_list.dart';
 import 'package:getshop_demo/controllers/cart_controller.dart';
 
+import '../data/product/product.dart';
 import 'cart_badge.dart';
 
 class CartButton extends StatelessWidget {
@@ -12,7 +14,7 @@ class CartButton extends StatelessWidget {
     final cartController = Get.find<CartController>();
     return Obx(
       () => IconButton(
-        onPressed: _openCart,
+        onPressed: () => _openCart(cartController.cart),
         icon: Stack(
           children: [
             Align(
@@ -26,5 +28,15 @@ class CartButton extends StatelessWidget {
     );
   }
 
-  void _openCart() {}
+  void _openCart(List<Product> products) {
+    Get.dialog(
+      Dialog(
+        insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        child: SizedBox(
+          height: Get.mediaQuery.size.height * 0.75,
+          child: const CartItemsList(),
+        ),
+      ),
+    );
+  }
 }
