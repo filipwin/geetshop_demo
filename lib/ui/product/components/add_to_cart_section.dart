@@ -24,18 +24,18 @@ class AddToCartSection extends StatelessWidget {
         ),
         const SizedBox(width: 16),
         Obx(
-          () => cartController.cart.isEmpty
+          () => cartController.cart.contains(product)
               ? MaterialButton(
-                  onPressed: _addToCart,
-                  color: Theme.of(context).primaryColor,
-                  shape: const StadiumBorder(),
-                  child: const Text("Add to cart"),
-                )
-              : MaterialButton(
                   onPressed: _removeFromCart,
                   color: Theme.of(context).errorColor,
                   shape: const StadiumBorder(),
                   child: const Text("Remove from cart"),
+                )
+              : MaterialButton(
+                  onPressed: _addToCart,
+                  color: Theme.of(context).primaryColor,
+                  shape: const StadiumBorder(),
+                  child: const Text("Add to cart"),
                 ),
         ),
       ],

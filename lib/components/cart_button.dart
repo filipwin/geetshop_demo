@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getshop_demo/controllers/cart_controller.dart';
 
+import 'cart_badge.dart';
+
 class CartButton extends StatelessWidget {
   const CartButton({Key? key}) : super(key: key);
 
@@ -11,7 +13,15 @@ class CartButton extends StatelessWidget {
     return Obx(
       () => IconButton(
         onPressed: _openCart,
-        icon: Icon(cartController.cart.isEmpty ? Icons.shopping_cart_outlined : Icons.shopping_cart),
+        icon: Stack(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Icon(cartController.cart.isEmpty ? Icons.shopping_cart_outlined : Icons.shopping_cart),
+            ),
+            if (cartController.cart.isNotEmpty) CartBadge(number: cartController.cart.length),
+          ],
+        ),
       ),
     );
   }
