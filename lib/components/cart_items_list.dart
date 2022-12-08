@@ -17,7 +17,7 @@ class CartItemsList extends StatelessWidget {
         children: [
           const SizedBox(height: 8),
           const Text(
-            'Cart ',
+            'Cart',
             style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
