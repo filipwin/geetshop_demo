@@ -43,10 +43,10 @@ class AddToCartSection extends StatelessWidget {
   }
 
   void _addToCart() {
-    Get.find<CartController>().addToCart(product);
+    Get.find<CartController>().cart.add(product);
   }
 
   void _removeFromCart() {
-    Get.find<CartController>().removeFromCart(product);
+    Get.find<CartController>().cart.remove(product);
   }
 }

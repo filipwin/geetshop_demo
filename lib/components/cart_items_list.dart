@@ -86,7 +86,7 @@ class CartListItem extends StatelessWidget {
   }
 
   void _removeFromCart() {
-    Get.find<CartController>().removeFromCart(item);
+    Get.find<CartController>().cart.remove(item);
   }
 }
 
