@@ -41,6 +41,7 @@ class ProductListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageSize = MediaQuery.of(context).size.width * 0.25;
     return Material(
+      color: Colors.transparent,
       child: InkWell(
         onTap: _onItemTap,
         child: Padding(

@@ -20,6 +20,9 @@ class ProductMockService implements ProductService {
       case ProductCategory.tv:
         productList = _mockTvProducts;
         break;
+      case ProductCategory.headphone:
+        productList = _mockHeadphoneProducts;
+        break;
       default:
         productList = [];
     }
@@ -148,7 +151,58 @@ final _mockTvProducts = [
     name: 'Toshiba 50" Borderless Ultra HD Android TV HDR & Dolby Vision - 50UA6B63DG',
     price: 379.0,
     description: BlahGenerator.generate(),
-    imageUrl: 'https://digitalzone.com.mt/media/catalog/product/cache/a41383e746bb224b450cd535403bfd9b/5/5/55UA6B63DG_1_1_1.jpg',
+    imageUrl:
+        'https://digitalzone.com.mt/media/catalog/product/cache/a41383e746bb224b450cd535403bfd9b/5/5/55UA6B63DG_1_1_1.jpg',
     starRating: 4.6,
+  ),
+];
+
+final _mockHeadphoneProducts = [
+  Product(
+    id: 20,
+    category: ProductCategory.headphone,
+    name: 'Sony WH-1000XM4',
+    price: 289.0,
+    description: BlahGenerator.generate(),
+    imageUrl: 'https://webobjects2.cdw.com/is/image/CDW/6325292?\$product-main\$',
+    starRating: 5.0,
+  ),
+  Product(
+    id: 21,
+    category: ProductCategory.headphone,
+    name: 'Bose QuietComfort 35 II',
+    price: 334.0,
+    description: BlahGenerator.generate(),
+    imageUrl: 'https://www.icentre.com.mt/images/thumbs/0016892_bose-quietcomfort-35-ii-wireless.jpeg',
+    starRating: 4.6,
+  ),
+  Product(
+    id: 22,
+    category: ProductCategory.headphone,
+    name: 'Beats Solo 3 Headphones',
+    price: 239.0,
+    description: BlahGenerator.generate(),
+    imageUrl: 'https://icentre.com.mt/images/thumbs/0008081_beats-solo-3-wireless-on-ear-headphones.jpeg',
+    starRating: 3.8,
+  ),
+  Product(
+    id: 23,
+    category: ProductCategory.headphone,
+    name: 'Sennheiser MOMENTUM 4',
+    price: 459.0,
+    description: BlahGenerator.generate(),
+    imageUrl:
+        'https://i.guim.co.uk/img/media/0d20865baf35a0bb54a1525e286b795587e3ffec/452_332_4203_2521/master/4203.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=b5f9b8bfbc3986e5118030cb84db7aad',
+    starRating: 4.8,
+  ),
+  Product(
+    id: 24,
+    category: ProductCategory.headphone,
+    name: 'Pioneer DJ HDJ-X5BT-N',
+    price: 149.0,
+    description: BlahGenerator.generate(),
+    imageUrl:
+        'https://thenotebookcentre.com.mt/wp-content/uploads/2022/08/Pioneer-HDJ-X5BT_thenotebookcentre.com_.mt_.png',
+    starRating: 4.3,
   ),
 ];
