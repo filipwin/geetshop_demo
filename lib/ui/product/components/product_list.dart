@@ -54,7 +54,9 @@ class ProductListItem extends StatelessWidget {
                 height: imageSize,
               ),
               const SizedBox(width: 16),
-              ItemDescription(product: product),
+              Flexible(
+                child: ItemDescription(product: product),
+              ),
             ],
           ),
         ),

@@ -12,8 +12,8 @@ class ProductDetailsBinding extends Bindings {
 
   @override
   void dependencies() {
-    Get.create<ProductService>(() => ProductMockService(), tag: "mock");
-    Get.create(() => ProductRepository(Get.find(tag: "mock")));
-    Get.create(() => ProductDetailsController(Get.find(), productId: productId));
+    Get.lazyPut<ProductService>(() => ProductMockService(), tag: "mock");
+    Get.lazyPut(() => ProductRepository(Get.find(tag: "mock")));
+    Get.lazyPut(() => ProductDetailsController(Get.find(), productId: productId));
   }
 }

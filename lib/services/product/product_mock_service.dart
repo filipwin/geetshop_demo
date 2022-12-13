@@ -17,6 +17,9 @@ class ProductMockService implements ProductService {
       case ProductCategory.smartphone:
         productList = _mockSmartphoneProducts;
         break;
+      case ProductCategory.tv:
+        productList = _mockTvProducts;
+        break;
       default:
         productList = [];
     }
@@ -98,5 +101,54 @@ final _mockSmartphoneProducts = [
     imageUrl:
         'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6509/6509962_sd.jpg;maxHeight=640;maxWidth=550',
     starRating: 4.4,
+  ),
+];
+
+final _mockTvProducts = [
+  Product(
+    id: 10,
+    category: ProductCategory.tv,
+    name: 'Philips 65″ 4K UHD LED Smart TV – 65PUS7607',
+    price: 899.0,
+    description: BlahGenerator.generate(),
+    imageUrl: 'https://images.philips.com/is/image/PhilipsConsumer/65PUS7607_12-IMS-en_GB?\$jpglarge\$&wid=1250',
+    starRating: 4.2,
+  ),
+  Product(
+    id: 11,
+    category: ProductCategory.tv,
+    name: 'Samsung 32 Inch UE32T4307 Smart HD Ready HDR LED TV',
+    price: 209.0,
+    description: BlahGenerator.generate(),
+    imageUrl: 'https://media.4rgos.it/s/Argos/8893271_R_SET?\$Main768\$&w=620&h=620',
+    starRating: 4.1,
+  ),
+  Product(
+    id: 12,
+    category: ProductCategory.tv,
+    name: 'MANTA TV 24LHN120D 24”',
+    price: 149.0,
+    description: BlahGenerator.generate(),
+    imageUrl: 'https://www.flamingo.mt/wp-content/uploads/2022/07/manta24-2.png',
+    starRating: 2.7,
+  ),
+  Product(
+    id: 13,
+    category: ProductCategory.tv,
+    name: 'NOKIA QLED 50" 4K UHD 8GB MEM 1.5GB RAM SMART ANDROID TV',
+    price: 399.0,
+    description: BlahGenerator.generate(),
+    imageUrl:
+        'https://cdn.shopify.com/s/files/1/0379/9256/2732/products/Nokia_Smart_TV_4300D_front_webshop_1920x1920_23ec040e-9048-4d96-84ce-52ef0e486304_1024x1024@2x.jpg?v=1667471855',
+    starRating: 3.5,
+  ),
+  Product(
+    id: 14,
+    category: ProductCategory.tv,
+    name: 'Toshiba 50" Borderless Ultra HD Android TV HDR & Dolby Vision - 50UA6B63DG',
+    price: 379.0,
+    description: BlahGenerator.generate(),
+    imageUrl: 'https://digitalzone.com.mt/media/catalog/product/cache/a41383e746bb224b450cd535403bfd9b/5/5/55UA6B63DG_1_1_1.jpg',
+    starRating: 4.6,
   ),
 ];
