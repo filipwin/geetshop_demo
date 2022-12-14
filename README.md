@@ -2,6 +2,11 @@
 
 Get state management demonstration app.
 
+## Demo
+
+https://user-images.githubusercontent.com/16081839/207602932-0d64ac4a-8451-4de2-bfbd-68816e5b4e69.mp4
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
