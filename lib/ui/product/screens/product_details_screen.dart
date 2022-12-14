@@ -27,6 +27,7 @@ class ProductDetailsScreen extends StatelessWidget {
             Text(
               product.name,
               style: const TextStyle(fontSize: 32),
+              textAlign: TextAlign.center,
             ),
             AddToCartSection(product: product),
             const SizedBox(height: 16),
